@@ -60,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.33.0"],\
             ["eslint-config-react-app", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:7.0.1"],\
             ["eslint-plugin-jest-dom", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:4.0.3"],\
+            ["pnpapi", "npm:0.0.0"],\
             ["prettier", "npm:2.8.4"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
@@ -21143,6 +21144,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["pnpapi", [\
+        ["npm:0.0.0", {\
+          "packageLocation": "./.yarn/cache/pnpapi-npm-0.0.0-5087239484-9b8ce695cb.zip/node_modules/pnpapi/",\
+          "packageDependencies": [\
+            ["pnpapi", "npm:0.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["polished", [\
         ["npm:4.2.2", {\
           "packageLocation": "./.yarn/cache/polished-npm-4.2.2-eb3d423b8d-97fb927dc5.zip/node_modules/polished/",\
@@ -24510,6 +24520,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.33.0"],\
             ["eslint-config-react-app", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:7.0.1"],\
             ["eslint-plugin-jest-dom", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:4.0.3"],\
+            ["pnpapi", "npm:0.0.0"],\
             ["prettier", "npm:2.8.4"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\

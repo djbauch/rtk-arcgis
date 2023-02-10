@@ -15046,6 +15046,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pnpapi@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "pnpapi@npm:0.0.0"
+  checksum: 9b8ce695cb5dcd904f2602a5e943d5808a58818e5c5dcf1c9b6dde3610b0f9070b9bc6758621c39d2cc954a1305d6256d925f176e17f00cc30779a6350d7a9f7
+  languageName: node
+  linkType: hard
+
 "polished@npm:^4.2.2":
   version: 4.2.2
   resolution: "polished@npm:4.2.2"
@@ -17308,6 +17315,7 @@ __metadata:
     eslint: ^8.33.0
     eslint-config-react-app: ^7.0.1
     eslint-plugin-jest-dom: ^4.0.3
+    pnpapi: ^0.0.0
     prettier: ^2.8.4
     prop-types: ^15.8.1
     react: ^18.2.0
