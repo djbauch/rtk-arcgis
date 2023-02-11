@@ -54,6 +54,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.12"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
+            ["@types/sanitize-html", "npm:2.8.0"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.39"],\
             ["babel-plugin-named-exports-order", "npm:0.0.2"],\
@@ -68,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:18.2.0"],\
             ["react-redux", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:8.0.5"],\
             ["react-scripts", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:5.0.1"],\
+            ["sanitize-html", "npm:2.9.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["web-vitals", "npm:2.1.4"],\
             ["webpack", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:5.75.0"]\
@@ -8828,6 +8830,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-retry-npm-0.12.0-e4e6294a2c-61a072c763.zip/node_modules/@types/retry/",\
           "packageDependencies": [\
             ["@types/retry", "npm:0.12.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/sanitize-html", [\
+        ["npm:2.8.0", {\
+          "packageLocation": "./.yarn/cache/@types-sanitize-html-npm-2.8.0-75f4b9573c-6e583cac67.zip/node_modules/@types/sanitize-html/",\
+          "packageDependencies": [\
+            ["@types/sanitize-html", "npm:2.8.0"],\
+            ["htmlparser2", "npm:8.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -20918,6 +20930,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["parse-srcset", [\
+        ["npm:1.0.2", {\
+          "packageLocation": "./.yarn/cache/parse-srcset-npm-1.0.2-8acc142245-3a0380380c.zip/node_modules/parse-srcset/",\
+          "packageDependencies": [\
+            ["parse-srcset", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["parse5", [\
         ["npm:6.0.1", {\
           "packageLocation": "./.yarn/cache/parse5-npm-6.0.1-70a35a494a-7d569a176c.zip/node_modules/parse5/",\
@@ -24607,6 +24628,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:16.18.12"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
+            ["@types/sanitize-html", "npm:2.8.0"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.39"],\
             ["babel-plugin-named-exports-order", "npm:0.0.2"],\
@@ -24621,6 +24643,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:18.2.0"],\
             ["react-redux", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:8.0.5"],\
             ["react-scripts", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:5.0.1"],\
+            ["sanitize-html", "npm:2.9.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["web-vitals", "npm:2.1.4"],\
             ["webpack", "virtual:728bac164bc3978a9cc34e44c94113d9c373a3c1b62566d0a99259c4bcd99b08a24ef62802c3a713d0941a3cb567968ddc1b3be97abf8882310d99ff020d245a#npm:5.75.0"]\
@@ -24716,6 +24739,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["micromatch", "npm:3.1.10"],\
             ["minimist", "npm:1.2.8"],\
             ["walker", "npm:1.0.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["sanitize-html", [\
+        ["npm:2.9.0", {\
+          "packageLocation": "./.yarn/cache/sanitize-html-npm-2.9.0-401eef7032-ffe3445c36.zip/node_modules/sanitize-html/",\
+          "packageDependencies": [\
+            ["sanitize-html", "npm:2.9.0"],\
+            ["deepmerge", "npm:4.3.0"],\
+            ["escape-string-regexp", "npm:4.0.0"],\
+            ["htmlparser2", "npm:8.0.1"],\
+            ["is-plain-object", "npm:5.0.0"],\
+            ["parse-srcset", "npm:1.0.2"],\
+            ["postcss", "npm:8.4.21"]\
           ],\
           "linkType": "HARD"\
         }]\
