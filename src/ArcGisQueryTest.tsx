@@ -1,4 +1,5 @@
 import * as React from 'react';
+import parse from 'html-react-parser'
 import { useGetArcGisSearchResultByTopicQuery } from './services/arcgisEnterprise';
 
 export default function ArcGisQueryTest() {
@@ -22,8 +23,7 @@ export default function ArcGisQueryTest() {
               <p>ID: {result.id}</p>
               <p>Owner: {result.owner}</p>
               <p>Name: {result.name}</p>
-              <React.Fragment>{result.description}</React.Fragment>
-              <div dangerouslySetInnerHTML={{__html: result.description}}/>
+              <React.Fragment>{parse(result.description)}</React.Fragment>
               <hr/>
             </div>
           ))}
