@@ -8,8 +8,8 @@
 }
 
 .QueryResult {
-  background-color: #444d54;
-  font-size: 12px;
+  background-color: #dfdfdf;
+  font-size: 12pt;
 }
 
 @media (prefers-reduced-motion: no-preference) {
