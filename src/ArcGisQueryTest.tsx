@@ -14,7 +14,7 @@ export default function ArcGisQueryTest() {
     SetPage(value);
   };
   const { data, error, isLoading } =
-    useGetArcGisSearchResultByTopicQuery("Texas");
+    useGetArcGisSearchResultByTopicQuery({topic: "Texas", start: (page -1 ) * 10 + 1});
 
   return (
     <div className="QueryResult">
@@ -25,9 +25,9 @@ export default function ArcGisQueryTest() {
       ) : data ? (
         <>
           <Stack spacing={1}>
-            <Typography>Page: {page}</Typography>
+            <Typography>Page: {page} of {data.total / 10}</Typography>
             <Pagination
-              count={100}
+              count={data.total / 10}
               page={page}
               variant="outlined"
               shape="rounded"

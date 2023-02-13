@@ -51,7 +51,7 @@ export type ArcGisItem = {
   lastViewd: number
 }
 
-export type ArcGisSearchResult = {
+export type SearchResultList<T> = {
   // The total number of search results found
   total: number
   // The number of the first result in this page, one-based
@@ -60,5 +60,12 @@ export type ArcGisSearchResult = {
   num: number
   // Number of the next page of results
   nextStart: number
-  results: ArcGisItem[]
+  results: T[]
+}
+
+export type ArcGisSearchResult = SearchResultList<ArcGisItem>
+
+export type ArcGisQueryArgs = {
+  topic: string
+  start: number
 }
