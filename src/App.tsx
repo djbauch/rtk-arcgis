@@ -1,22 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ArcGisQueryTest from './ArcGisQueryTest';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ArcGisQueryTest from "./ArcGisQueryTest";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ArcGisQueryTest />
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://developers.arcgis.com/rest/users-groups-and-items/search.htm"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Search ArcGIS Portal
         </a>
       </header>
+      <ArcGisQueryTest />
     </div>
   );
 }
