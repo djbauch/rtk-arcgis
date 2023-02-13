@@ -9,11 +9,11 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://developers.arcgis.com/rest/users-groups-and-items/search.htm"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Search ArcGIS Portal
         </a>
       </header>
       <ArcGisQueryTest />
