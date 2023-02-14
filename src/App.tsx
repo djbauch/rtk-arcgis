@@ -16,7 +16,7 @@ function App() {
           Search ArcGIS Portal
         </a>
       </header>
-      <ArcGisQueryTest />
+      <ArcGisQueryTest topic="San Antonio" />
     </div>
   );
 }
