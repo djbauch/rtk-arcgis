@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./app/store";
 import "./bootstrap.css";
 
 // MUI's default typography relies only on these. See https://mui.com/material-ui/getting-started/installation/

@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import { RootState } from '../app/store'
 import type { ArcGisQueryArgs, ArcGisSearchResult } from './types'
 
 export const arcGisEnterpriseApi = createApi({
@@ -15,3 +16,4 @@ export const arcGisEnterpriseApi = createApi({
 })
 
 export const { useGetArcGisSearchResultByTopicQuery } = arcGisEnterpriseApi
+export const selectArcGisResults = (state: RootState) => state.arcGISEnterpriseApi
