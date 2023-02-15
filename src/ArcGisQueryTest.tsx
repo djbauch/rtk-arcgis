@@ -15,7 +15,7 @@ const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({topic}) => {
     SetPage(value);
   };
   const { data, error, isLoading } =
-    useGetArcGisSearchResultByTopicQuery({topic, start: (page -1 ) * 10 + 1});
+    useGetArcGisSearchResultByTopicQuery({topic, start: (page - 1) * 10 + 1});
 
   return (
     <div className="QueryResult">
