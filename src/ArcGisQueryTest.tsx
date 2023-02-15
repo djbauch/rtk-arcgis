@@ -8,9 +8,7 @@ import Stack from "@mui/material/Stack";
 
 import { useGetArcGisSearchResultByTopicQuery } from "./services/arcgisEnterprise";
 import { ArcGisQueryArgs } from "./services/types";
-type ArcGisQueryProps = {
-  topic: string;
-}
+
 const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({topic}) => {
   const [page, SetPage] = React.useState(1);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
@@ -44,6 +42,7 @@ const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({topic}) => {
             <p>Results:</p>
             {data.results.map((result) => (
               <div key={result.id}>
+
                 <p>ID: {result.id}</p>
                 <p>Owner: {result.owner}</p>
                 <p>Name: {result.name}</p>

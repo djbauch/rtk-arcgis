@@ -69,7 +69,7 @@ export type ArcGisQueryArgs = {
   topic?: string
   start?: number
   num?: number
-  bbox?: number[][]
+  bbox?: [number, number][]
   sortField?: 'title' | 'created' | 'type' | 'owner' | 'modified' | 'avgrating' | 'numratings' |
     'numcomments' | 'numviews' | 'scorecompleteness'
   sortOrder?: 'asc' | 'desc'

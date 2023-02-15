@@ -1,11 +1,15 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./bootstrap.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import Root, {
+  loader as rootLoader,
+  action as rootAction,
+} from "./routes/Root"
+
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import "./bootstrap.css";
 
 // MUI's default typography relies only on these. See https://mui.com/material-ui/getting-started/installation/
 import '@fontsource/roboto/300.css'
@@ -23,8 +27,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
