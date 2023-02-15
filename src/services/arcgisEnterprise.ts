@@ -2,6 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../app/store";
 import type { ArcGisQueryArgs, ArcGisSearchResult } from "./types";
 
+// ArcGIS Enterprise Portal queries require at least one of the parameters
+// q, bbox, or categories
 export const arcGisEnterpriseApi = createApi({
   reducerPath: "arcGISEnterpriseApi",
   baseQuery: fetchBaseQuery({
@@ -13,7 +15,7 @@ export const arcGisEnterpriseApi = createApi({
       ArcGisQueryArgs
     >({
       query: (args) => {
-        const { topic, start, bbox, sortOrder } = args;
+        const { topic, start, bbox, categories, sortOrder } = args;
         let bboxClause = "";
         if (bbox) {
           const minX = bbox[0][0];
