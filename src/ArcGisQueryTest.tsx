@@ -7,14 +7,15 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 import { useGetArcGisSearchResultByTopicQuery } from "./services/arcgisEnterprise";
+import { ArcGisQueryArgs } from "./services/types";
 
-export default function ArcGisQueryTest() {
+const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({topic}) => {
   const [page, SetPage] = React.useState(1);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     SetPage(value);
   };
   const { data, error, isLoading } =
-    useGetArcGisSearchResultByTopicQuery({topic: "Texas", start: (page -1 ) * 10 + 1});
+    useGetArcGisSearchResultByTopicQuery({topic, start: (page - 1) * 10 + 1});
 
   return (
     <div className="QueryResult">
@@ -25,9 +26,9 @@ export default function ArcGisQueryTest() {
       ) : data ? (
         <>
           <Stack spacing={1}>
-            <Typography>Page: {page} of {data.total / 10}</Typography>
+            <Typography>Page: {page} of {Math.ceil(data.total / 10)}</Typography>
             <Pagination
-              count={data.total / 10}
+              count={Math.ceil(data.total / 10)}
               page={page}
               variant="outlined"
               shape="rounded"
@@ -41,6 +42,7 @@ export default function ArcGisQueryTest() {
             <p>Results:</p>
             {data.results.map((result) => (
               <div key={result.id}>
+
                 <p>ID: {result.id}</p>
                 <p>Owner: {result.owner}</p>
                 <p>Name: {result.name}</p>
@@ -62,3 +64,4 @@ export default function ArcGisQueryTest() {
     </div>
   );
 }
+export default ArcGisQueryTest

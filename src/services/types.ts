@@ -66,6 +66,13 @@ export type SearchResultList<T> = {
 export type ArcGisSearchResult = SearchResultList<ArcGisItem>
 
 export type ArcGisQueryArgs = {
-  topic: string
-  start: number
+  topic?: string
+  start?: number
+  num?: number
+  bbox?: [number, number][]
+  sortField?: 'title' | 'created' | 'type' | 'owner' | 'modified' | 'avgrating' | 'numratings' |
+    'numcomments' | 'numviews' | 'scorecompleteness'
+  sortOrder?: 'asc' | 'desc'
+  displaySublayers?: boolean
+  format?: 'html' | 'json' | 'pjson'
 }
