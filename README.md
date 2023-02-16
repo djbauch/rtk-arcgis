@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## The demo runs on Repl.it!
 
-[![Run on Repl.it](https://replit.com/badge/github/djbauch/search-and-filter)](https://replit.com/new/github/djbauch/search-and-filter)
+[![Run on Repl.it](https://replit.com/badge/github/djbauch/rtk-gis)](https://replit.com/new/github/djbauch/rtk-gis)
 
 ## Available Scripts
 
