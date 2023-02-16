@@ -5,16 +5,22 @@ import { DateTime } from "luxon";
 import Pagination from "@mui/material/Pagination";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useGetArcGisSearchResultByTopicQuery } from "./services/arcgisEnterprise";
+import { ArcGisQueryArgs } from "./services/types";
 
-export default function ArcGisQueryTest() {
+const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({ topic }) => {
   const [page, SetPage] = React.useState(1);
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     SetPage(value);
   };
-  const { data, error, isLoading } =
-    useGetArcGisSearchResultByTopicQuery({topic: "Texas", start: (page -1 ) * 10 + 1});
+  const { data, error, isLoading } = useGetArcGisSearchResultByTopicQuery({
+    topic,
+    start: (page - 1) * 10 + 1,
+  });
 
   return (
     <div className="QueryResult">
@@ -25,9 +31,11 @@ export default function ArcGisQueryTest() {
       ) : data ? (
         <>
           <Stack spacing={1}>
-            <Typography>Page: {page} of {data.total / 10}</Typography>
+            <Typography>
+              Page: {page} of {Math.ceil(data.total / 10)}
+            </Typography>
             <Pagination
-              count={data.total / 10}
+              count={Math.ceil(data.total / 10)}
               page={page}
               variant="outlined"
               shape="rounded"
@@ -44,15 +52,25 @@ export default function ArcGisQueryTest() {
                 <p>ID: {result.id}</p>
                 <p>Owner: {result.owner}</p>
                 <p>Name: {result.name}</p>
+                <p>Title: {result.title}</p>
+                <p>Type: {result.type}</p>
                 <p>
                   Created: {DateTime.fromMillis(result.created).toISODate()}
                 </p>
                 <p>
                   Modified: {DateTime.fromMillis(result.modified).toISODate()}
                 </p>
-                <React.Fragment>
-                  {parse(sanitizeHtml(result.description))}
-                </React.Fragment>
+                <Accordion>
+                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography>{result.snippet}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <React.Fragment>
+                      {parse(sanitizeHtml(result.description))}
+                    </React.Fragment>
+                  </AccordionDetails>
+                </Accordion>
+
                 <hr />
               </div>
             ))}
@@ -61,4 +79,5 @@ export default function ArcGisQueryTest() {
       ) : null}
     </div>
   );
-}
+};
+export default ArcGisQueryTest;

@@ -65,7 +65,18 @@ export type SearchResultList<T> = {
 
 export type ArcGisSearchResult = SearchResultList<ArcGisItem>
 
+// For categories, the parameter can appear up to eight times.
+// Within each appearance, the list of categories are ORed together
+// Across appearances, the lists are ANDed together
 export type ArcGisQueryArgs = {
-  topic: string
-  start: number
+  topic?: string
+  start?: number
+  num?: number
+  bbox?: [number, number][]
+  sortField?: 'title' | 'created' | 'type' | 'owner' | 'modified' | 'avgrating' | 'numratings' |
+    'numcomments' | 'numviews' | 'scorecompleteness'
+  sortOrder?: 'asc' | 'desc'
+  categories?: string[]
+  displaySublayers?: boolean
+  format?: 'html' | 'json' | 'pjson'
 }
