@@ -30,7 +30,12 @@ function App() {
         id="searchTerm"
         sx={{ ml: 1, flex: 1 }}
         value={searchText}
+        onKeyDown={(e: React.KeyboardEvent) => {if (e && (e.key === "Enter" || e.key === "Tab")) {
+          e.preventDefault()
+          setTerm(searchText)
+        }}}
         onChange= {(event: React.ChangeEvent<HTMLInputElement>) => {
+          console.log(`Search text: ${event.target.value}`)
           setSearchText(event.target.value)
         }}
         placeholder="Search ArcGIS Portal"
