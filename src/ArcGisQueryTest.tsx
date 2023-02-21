@@ -70,20 +70,25 @@ const ArcGisQueryTest: React.FC<ArcGisQueryArgs> = ({ topic }) => {
                     </React.Fragment>
                   </AccordionDetails>
                 </Accordion>
-                <p>Tags: {JSON.stringify(result.tags)}</p> 
+                <p>Tags: {JSON.stringify(result.tags)}</p>
                 <p>Thumbnail: {result.thumbnail}</p>
-                <p>Documentation: { result.documentation }</p>
-                <p>Extent: { JSON.stringify(result.extent).replace(/,/g, ',&nbsp;&nbsp; ')}</p>
-                <p>URL: { result.url}</p>
-  
+                <p>Documentation: {result.documentation}</p>
+                <p>
+                  Extent:{" "}
+                  {JSON.stringify(result.extent).replace(
+                    /,/g,
+                    ",&nbsp;&nbsp; "
+                  )}
+                </p>
+                <p>URL: {result.url}</p>
+
                 <hr />
               </div>
             ))}
-        </Stack>
+          </Stack>
         </>
-  ) : null
-}
-    </div >
+      ) : null}
+    </div>
   );
 };
 export default ArcGisQueryTest;

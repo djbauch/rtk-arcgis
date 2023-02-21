@@ -46,6 +46,7 @@ export default function Root() {
   }, [q]);
 
   return (
+    true ? <div><p>Hello</p></div> :
     <>
       <div id="sidebar">
         <h1>ArcGIS Portal Items</h1>
@@ -76,9 +77,9 @@ export default function Root() {
             <p><b>There was an error</b></p>
           ) : isLoading ? (
             <>Loading...</>
-          ) : data && data.results.length ? (
+          ) : data && data!.results.length ? (
             <ul>
-              {data.results.map((item) => (
+              {data!.results.map((item) => (
                 <li key={item.id}>
                   <NavLink to={`items/${item.id}`}>
                   </NavLink>

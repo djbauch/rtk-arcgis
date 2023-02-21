@@ -1,0 +1,11 @@
+{
+  "configurations": [
+  {
+    "name": "Edge",
+    "url": "http://localhost:3000",
+    "request": "launch",
+    "type": "msedge",
+    "webRoot": "${workspaceFolder}/src"
+  }
+  ]
+}
