@@ -23,21 +23,27 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import Index from './routes/Index'
 import ErrorPage from './routes/ErrorPage'
+import { Item, loader as itemLoader } from './routes/Item'
 
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route key="/" path="/" element={<Root />} errorElement={<ErrorPage />} loader={rootLoader} action={rootAction}>
       <Route errorElement={<ErrorPage />} />
       <Route index={true} element={<Index />} />
+      <Route path="items/:itemId"
+      element={<Item />}
+      loader = {itemLoader as unknown as LoaderFunction}
+      />
     </Route>
   ])
 )
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
-      <App />
+
     </Provider>
   </React.StrictMode>
 )

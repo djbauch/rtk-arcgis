@@ -82,7 +82,7 @@ button:active {
 }
 
 #sidebar {
-  width: 22rem;
+  width: 36rem;
   background-color: #f7f7f7;
   border-right: solid 1px #e3e3e3;
   display: flex;
@@ -90,8 +90,8 @@ button:active {
 }
 
 #sidebar > * {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
 #sidebar h1 {
@@ -113,6 +113,9 @@ button:active {
   top: 1px;
 }
 
+#sidebar > a {
+  width: 100%;
+}
 
 #sidebar > div {
   display: flex;
@@ -161,9 +164,13 @@ button:active {
 }
 
 #sidebar nav {
+  width: 100%;
   flex: 1;
   overflow: auto;
   padding-top: 1rem;
+  padding-left: 0rem;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 #sidebar nav a span {
@@ -193,7 +200,7 @@ i {
 
 #sidebar nav a {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
   overflow: hidden;
 
