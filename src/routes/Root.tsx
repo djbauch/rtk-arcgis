@@ -11,6 +11,7 @@ import { useGetArcGisSearchResultByTopicQuery } from '../services/arcgisEnterpri
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import { SerializedError } from '@reduxjs/toolkit'
 import Stack from '@mui/material/Stack'
+import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Pagination from '@mui/material/Pagination'
 
@@ -34,10 +35,12 @@ export default function Root() {
   }
   const navigation = useNavigation()
   const submit = useSubmit()
-  const result = useGetArcGisSearchResultByTopicQuery({ topic: q, start: (page - 1) * 10 + 1 })
-  const { data, error, isLoading } = result
-  const searching = navigation.location && new URLSearchParams(navigation.location.search).has('q')
 
+  const searching = navigation.location && new URLSearchParams(navigation.location.search).has('q')
+  const [term, setTerm] = React.useState<string>()
+  const [searchText, setSearchText] = React.useState('')
+  const result = useGetArcGisSearchResultByTopicQuery({ topic: term, start: (page - 1) * 10 + 1 })
+  const { data, error, isLoading } = result
   useEffect(() => {
     ;(document.getElementById('q') as HTMLInputElement).value = q || ''
   }, [q])
@@ -56,9 +59,16 @@ export default function Root() {
               type="search"
               name="q"
               defaultValue={q}
+              onKeyDown={(e) => {
+                if (e && (e.key === 'Enter' || e.key === 'Tab')) {
+                  e.preventDefault()
+                  setTerm(searchText)
+                  const isFirstSearch = q == null
+                  submit(e.currentTarget.form, { replace: !isFirstSearch })
+                }
+              }}
               onChange={(event) => {
-                const isFirstSearch = q == null
-                submit(event.currentTarget.form, { replace: !isFirstSearch })
+                setSearchText(event.target.value)
               }}
             />
             <div id="search-spinner" aria-hidden hidden={!searching} />
@@ -78,14 +88,14 @@ export default function Root() {
             <>Loading...</>
           ) : data ? (
             <Stack spacing={1}>
-                          <Pagination
-              count={Math.ceil(data.total / 10)}
-              page={page}
-              variant="outlined"
-              shape="rounded"
-              color="primary"
-              onChange={handlePageChange}
-            />
+              <Pagination
+                count={Math.ceil(data.total / 10)}
+                page={page}
+                variant="outlined"
+                shape="rounded"
+                color="primary"
+                onChange={handlePageChange}
+              />
               {data.results.map((item) => (
                 <QueryResultButton key={item.id} {...item} />
               ))}
